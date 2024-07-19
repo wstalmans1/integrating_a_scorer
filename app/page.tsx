@@ -254,9 +254,9 @@ export default function Passport() {
           {showTrusted && trustedUsers.map(user => <ul key={user.id}> {user.address} </ul>)}
         </div>
         {showStamps &&
-          <SimpleGrid columns={4} spacing='10px' marginTop={30}>
-            {showTrusted && showStamps && trustedUsers.map(user => user.stampProviders.map(s => <Badge key={s.id} colorScheme='green'>{s.stamp}</Badge>))}
-          </SimpleGrid>}
+          <SimpleGrid columns={3} spacing='10px' marginTop={30}>
+          {showTrusted && showStamps && trustedUsers.map(user => user.stampProviders.map(s => <Badge key={s.id} colorScheme='green'>{s.stamp}:{user.address.substring(0, 5)}</Badge>))}
+        </SimpleGrid>}
       </ChakraProvider >
     </div >
   )
